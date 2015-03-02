@@ -162,6 +162,9 @@ function setGitPrompt() {
       PS1="${Blue}($(basename "${VIRTUAL_ENV}"))${ResetColor} ${PS1}"
     fi
 
+    # Under tmux, rename current window to the git branch
+    tmux rename-window $GIT_BRANCH
+
   else
     PS1="${EMPTY_PROMPT}"
   fi
